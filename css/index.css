@@ -1,0 +1,40 @@
+html {
+    background-color: rgb(247, 241, 255);
+    color:rgb(5, 0, 28); 
+    font-family: 'Courier New', Courier, monospace;
+    padding: 2em;
+}
+
+h1 {
+    font-size: 350%;
+}
+
+h2 {
+    text-align: center;
+    font-size: 250%;
+}
+
+/*W3 Schools template for button links: https://www.w3schools.com/css/css_link.asp*/
+a:link, a:visited {
+    background-color: rgb(135, 36, 234);
+    color: white;
+    font-weight: bold;
+    padding: 14px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 1em;
+  }
+  
+  a:hover, a:active {
+    background-color: rgb(135, 36, 234);
+  }
+
+#aboutPhotos {
+    margin: auto;
+}
+
+#multimedia {
+    margin: auto;
+    text-align: center;
+}
