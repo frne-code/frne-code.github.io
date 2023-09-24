@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Midterm Changelog</title>
+</head>
+<body>
+    <div class="navbar">
+        <a href="/html-midterm/page1.html">Page 1</a>
+        <span> | </span>
+        <a href="/html-midterm/page2.html">Page 2</a>
+        <span> | </span>
+        <a href="/html-midterm/page3.html">Page 3</a>
+        <span> | </span>
+        <a href="/html-midterm/page4.html">Page 4</a>
+        <span> | </span>
+        <a href="/html-midterm/page5.html">Page 5</a>
+        <span> | </span>
+    </div>
+    <h1>Changelog for HTML Midterm</h1>
+    <p>I debugged the HTML Midterm using W3 Validator. Errors will be denoted below, followed by the solution.</p>
+    <h2>Page 1</h2>
+    <ol>
+        <li>
+            <p>Error: The character encoding was not declared<br>
+                Solution: Include UTF-8 character set in the head<code>&lt;meta charset="UTF-8"&gt;</code>
+            </p>
+        </li>
+        <li>
+            <p>Error: Missing closing tr and table tags<br>
+                Solution: Include closing tr and table tags<code>&lt;/tr&gt; &lt;/table&gt;</code>
+            </p>
+        </li>
+        <li>
+            <p>Warning: Missing a language classification<br>
+                Solution: Include language classification in the html tag<code>&lt;html lang="en"&gt;</code>
+            </p>
+        </li>
+    </ol>
+    <h2>Page 2</h2>
+    <ol>
+        <li>
+            <p>Error: Empty tag should be a closing bold tag<br>
+                Solution: Include closing bold tag <code>&lt;/b&gt;</code>
+            </p>
+        </li>
+        <li>
+            <p>Error: Header element cannot be nested within a text-style element (in this case bold)<br>
+                Solution: Reorder element nesting <code>&lt;h2&gt;&lt;b&gt;Interior&lt;/b&gt;&lt;/h2&gt;</code>
+            </p>
+        </li>
+        <li>
+            <p>Error: Source referenced by an anchor should be linking to a reference on segmental arches, not "I don't know where to go"<br>
+                Solution: Replace source with an absolute link <code>&lt;a href="https://en.wikipedia.org/wiki/Segmental_arch"&gt;&lt;/a&gt;</code>
+            </p>
+        </li>
+        <li>
+            <p>Error: Missing closing header tag for H6; instead, includes opening hr tag<br>
+                Solution: Replace opening hr tag with closing h6 tag <code>&lt;/h6&gt;</code>
+            </p>
+        </li>
+    </ol>
+    <h2>Page 3</h2>
+    <ol>
+        <li>
+            <p>Error: Empty head<br>
+                Solution: Include title, meta data, and link to associated stylesheet<br>
+                <code>
+                    &lt;meta charset="UTF-8"&gt;<br>
+                    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;<br>
+                    &lt;title&gt;Midterm Page 3&lt;/title&gt;<br>
+                    &lt;link rel="stylesheet" href="/html-midterm/css/cars.css"&gt;
+                </code>
+            </p>
+        </li>
+        <li>
+            <p>Error: Missing !DOCTYPE<br>
+                Solution: Add !DOCTYPE <code>&lt;!DOCTYPE html&gt;</code>
+            </p>
+        </li>
+        <li>
+            <p>Warning: Missing a language classification<br>
+                Solution: Include language classification in the html tag<code>&lt;html lang="en"&gt;</code>
+            </p>
+        </li>
+    </ol>
+    <h2>Page 4</h2>
+    <ol>
+        <li>
+            <p>Error: Missing !DOCTYPE<br>
+                Solution: Add !DOCTYPE <code>&lt;!DOCTYPE html&gt;</code>
+            </p>
+        </li>
+        <li>
+            <p>Error: All images missing alternative text describing each image<br>
+                Solution: Add alternative text to each image; example <code>&lt;img src="testImage.jpg" alt="Example Descriptive Text"&gt;</code>
+            </p>
+        </li>
+        <li>
+            <p>Error: Missing td element to wrap around image<br>
+                Solution: Add opening and closing td tags to nest around image <code>&lt;td&gt;&lt;/td&gt;</code>
+            </p>
+        </li>
+        <li>
+            <p>Error: Missing opening td tag<br>
+                Solution: Add opening td tag <code>&lt;td&gt;</code>
+            </p>
+        </li>
+    </ol>
+</body>
+</html>
