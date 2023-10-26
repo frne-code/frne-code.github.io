@@ -40,7 +40,7 @@ h2 {
 
 h3 {
     text-shadow: 2px 2px 2px black;
-    background-color: black;
+    background-color: rgba(0, 0, 0, 0.8);
     border-radius: 25px;
     padding: 15px;
     text-align: center;
@@ -146,6 +146,9 @@ p {
         display: grid;
         grid-template-columns: 1fr;
     }
+    h3 {
+        background-color: black;
+    }
 }
 /*Desktop Query*/
 @media only screen and (min-width: 1500px) {
@@ -176,15 +179,16 @@ p {
         white-space: nowrap;
         display: table;
         background-color: #A10035;
+        margin: 0;
         animation: 10s infinite loop;
     }
     
     @keyframes loop {
         from {
-            margin-right: 50%;
+            left: 0;
         }
         to {
-            margin-left: 50%;
+           transform: translate(100px,0);
         }
     }
 }
