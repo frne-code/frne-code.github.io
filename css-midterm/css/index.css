@@ -1,0 +1,190 @@
+/*The challenge of this project is two-fold.
+
+This is a test of your ability to lay content out on a webpage using CSS. You will need to make effective use of grid and/or flexbox to complete this project.
+This is a test of your ability to think about the constraints that screens place on our ability to lay things out, and how what looks good on one size screen will not on another (that is, thinking about media queries and screen sizes).
+Constraints:
+
+The webpage you create must be responsive to two screen sizes -- a mobile screen of around 400px width, and a laptop screen of around 1500px width.
+You are allowed to use up to 3 colors, along with black and white.
+You may use whatever fonts you prefer.
+The webpage may use pictures, but careful consideration of how to use pictures should be given.
+The webpage may use geometric shapes.
+Do not base your webpage on the existing brand/colors/designs of the Colorado Symphony.*/
+body {
+    font-family:'Times New Roman', Times, serif;
+    background-color: #A10035;
+    color: white;
+}
+
+h1 {
+    animation: 6s fadein;
+    text-align: center;
+}
+
+@keyframes fadein {
+    from {
+        color:#A10035;
+        margin-left: 100%;
+    }
+    to { 
+        color: white;
+        margin-right: 50%;
+    }
+}
+
+h2 {
+    text-align: center;
+    text-shadow: 1px 1px 2px #A10035;
+    font-size: 30px;
+}
+
+h3 {
+    text-shadow: 2px 2px 2px black;
+    background-color: black;
+    border-radius: 25px;
+    padding: 15px;
+    text-align: center;
+}
+
+p {
+    background-color: #3FA796;
+    padding: 5px;
+}
+
+#introText {
+    border: #FEC260 solid 5px;
+    padding: 5px;
+    font-size: 20px;
+    text-align: center;
+}
+
+#showList {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+}
+
+.show {
+    background-color: #FEC260;
+    border: #3FA796 solid 5px;
+}
+
+.expandMe {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+}
+
+.date {
+    white-space: nowrap;
+    padding: 5px;
+    border: rgba(255, 255, 255, 0.5) solid 2px;
+}
+
+.description {
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 5px;
+}
+
+.addInfo {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 5px;
+}
+
+.featured, .repertoire {
+    padding: 5px;
+}
+
+.featured p, .repertoire p {
+    border-radius: 5px;
+    text-align: center;
+}
+
+#vivaldi {
+   background-image: url(../img/vivaldifourseasons.png);
+   background-size: cover;
+}
+
+#beethoven3, #beethoven8, #beethovenEmperor, #beethovenViolin {
+    background-image: url(../img/ludwig-van-beethoven-7313912_1280.png);
+    background-size: cover;
+}
+
+#tchaikovsky {
+    background-image: url(../img/tchaikovsky.png);
+    background-size: cover;
+}
+
+#ravel {
+    background-image: url(../img/ravel.png);
+    background-size: cover;
+}
+
+#bartok {
+    background-image: url(../img/bartok.png);
+    background-size: cover;
+}
+
+#brahms {
+    background-image: url(../img/brahms.png);
+    background-size: cover;
+}
+
+/*Mobile Device Query*/
+@media only screen and (max-width: 400px) {
+    #showList {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+    .description {
+        background-color: black;
+        padding: 10px 15px;
+    }
+    .addInfo {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+}
+/*Desktop Query*/
+@media only screen and (min-width: 1500px) {
+    h1 {
+        text-shadow: 1px 1px 4px #FEC260;
+        white-space: nowrap;
+    }
+
+    .show {
+        opacity: 50%;
+        transition: opacity 2s;
+    }
+
+    .show:hover {
+        opacity: 100%;
+    }
+
+    .expandMe {
+        opacity: 0;
+        transition: opacity 2s;
+    }
+
+    .expandMe:hover {
+        opacity: 100%;
+    }
+
+    .date {
+        white-space: nowrap;
+        display: table;
+        background-color: #A10035;
+        animation: 10s infinite loop;
+    }
+    
+    @keyframes loop {
+        from {
+            margin-right: 50%;
+        }
+        to {
+            margin-left: 50%;
+        }
+    }
+}
