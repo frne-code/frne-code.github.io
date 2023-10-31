@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intro to JavaScript</title>
+</head>
+<body>
+    <button onclick="fortuneTeller()">Have Your Fortune Told! $5</button>
+    <p>Are you happy with your fortune?</p>
+    <button onclick="yesButton()">Yes</button>
+    <button onclick="noButton()">No</button>
+    <div id="posResultPic"></div>
+    <div id="negResultPic"></div>
+    <script>
+        function fortuneTeller(){
+            alert("When you look at your bank account, you will be $5 poorer");
+        }
+        //Source tutorial from LinuxHint: https://linuxhint.com/add-image-in-html-via-javascript/
+        function yesButton(){
+            var posResult = document.createElement("img");
+            posResult.src = "../img/thumbs-thumbs-up-kid.gif";
+            var src = document.getElementById("posResultPic");
+            src.appendChild(posResult);
+        }
+        function noButton(){
+            var negResult = document.createElement("img");
+            negResult = "../img/holes-that's-too-damn-bad.gif";
+            var src = document.getElementById("negResultPic");
+            src.appendChild(negResult);
+        }
+    </script>
+</body>
+</html>
