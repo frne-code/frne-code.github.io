@@ -1,0 +1,47 @@
+h1 {
+  font-family:'Courier New', Courier, monospace;
+  text-align: center;
+}
+
+body {
+  width: 640px;
+  margin: 0 auto;
+  background-color: rgb(255, 222, 255);
+}
+
+img {
+  width: 378px;
+}
+
+.full-img {
+  position: relative;
+  display: block;
+  width: 378px;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 378px;
+  height: 504px;
+  background-color: rgba(0,0,0,0);
+}
+
+button {
+  border: 0;
+  background: rgb(255, 222, 255);
+  text-shadow: 1px 1px 1px white;
+  border: 1px solid #000000;
+  position: absolute;
+  cursor: pointer;
+  top: 2px;
+  left: 2px;
+}
+
+.thumb-bar img {
+  display: block;
+  width: 20%;
+  float: left;
+  cursor: pointer;
+}
