@@ -5,11 +5,11 @@ const btn = document.querySelector('button');
 const overlay = document.querySelector('.overlay');
 
 /* Declaring the array of image filenames */
-const imgArr = ["images/cskMemorial.jpg",
-                "images/libertySquare.jpg",
-                "images/maokongSkyline.jpg",
-                "images/matchmakerGod.jpg",
-                "images/taipei101.jpg"]
+const imgArr = ["images/cskMemorial.JPG",
+                "images/libertySquare.JPG",
+                "images/maokongSkyline.JPG",
+                "images/matchmakerGod.JPG",
+                "images/taipei101.JPG"]
 /* Declaring the alternative text for each image file */
 const altTxt = {
     "image 1" : "Chiang Kai-shek Memorial",
