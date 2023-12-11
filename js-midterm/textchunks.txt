@@ -1,0 +1,101 @@
+ HTML
+ 
+ <!-- <div id="duckies">
+        <button class="quacksonFive"><img src="../media/img/inclass/lilalu-quietscheente-gelb-yellow-rubber-duck-HL.png" width="100px" class="quacksonFive"></button>
+        <button class="quacksonFive"><img src="../media/img/inclass/lilalu-quietscheente-gelb-yellow-rubber-duck-HL.png" width="100px" class="quacksonFive"></button>
+        <button class="quacksonFive"><img src="../media/img/inclass/lilalu-quietscheente-gelb-yellow-rubber-duck-HL.png" width="100px" class="quacksonFive"></button>
+        <button class="quacksonFive"><img src="../media/img/inclass/lilalu-quietscheente-gelb-yellow-rubber-duck-HL.png" width="100px" class="quacksonFive"></button>
+        <button class="quacksonFive"><img src="../media/img/inclass/lilalu-quietscheente-gelb-yellow-rubber-duck-HL.png" width="100px" class="quacksonFive"></button>
+    </div>
+    <div id="duckAnswer"></div>
+    <br>
+    <button onclick="addDuck()">Yes</button>
+    <button onclick="yeetDuck()">No</button>
+    <br><br>
+    <table id="phoneNumber">
+        <tr></tr>
+        <tr>Phone Number</tr>
+        <tr id="digits">
+            <td id="d0">_</td>
+            <td id="d1">_</td>
+            <td id="d2">_</td>
+            <td id="d3">_</td>
+            <td id="d4">_</td>
+            <td id="d5">_</td>
+            <td id="d6">_</td>
+            <td id="d7">_</td>
+            <td id="d8">_</td>
+            <td id="d9">_</td>
+        </tr>
+    </table>-->
+
+CSS 
+
+/*#duckies {
+    margin: 0;
+    background-color: aqua;
+}
+
+#duckies button {
+    background-color: rgba(255,0,255,0);
+    border: 0px;
+}
+
+#duckies img {
+    padding: 4em;
+}*/
+
+JS
+
+/*let dNumber;
+for(let i=0;i<10;i++){
+    dNumber = document.getElementById("d" + i);
+    console.log("Digit " + (i + 1));
+}
+
+const quackerClicker = document.querySelector("#duckies");
+quackerClicker.addEventListener("click", keepDuck);
+
+function check(){
+    console.log("DUCKS");
+}
+
+let num = Math.floor(Math.random()*10);
+
+function keepDuck(){
+    console.log("clicked the quack!");
+    document.getElementById("duckAnswer").innerHTML = "Keep Duck #" + num + "?";
+}
+
+function addDuck(){
+    for(let j=0;j<10;j++){
+        console.log(document.getElementById("d" + j).innerHTML);
+        if(document.getElementById("d" + j).innerHTML == "_"){
+            document.getElementById("d" + j).innerHTML = num;
+            j = 10;
+            num = Math.floor(Math.random()*10);
+
+        }
+    }
+}
+
+function yeetDuck(){
+    num = Math.floor(Math.random()*10);
+}
+
+
+Current bugs - add numbers before duck is clicked; can update automatically; need to have "yeet Duck" cause the "game" to start over
+*/
+
+function reset(){
+    number = 9999999999;
+    d9.innerHTML = number%10;
+    d8.innerHTML = (number%100 - d9.innerHTML)/10;
+    d7.innerHTML = (number%1000 - (d8.innerHTML*10) - d9.innerHTML)/100;
+    d6.innerHTML = (number%10000 - (d7.innerHTML*100) - (d8.innerHTML*10) - d9.innerHTML)/1000;        d5.innerHTML = (number%100000 - (d6.innerHTML*1000) - (d7.innerHTML*100) - (d8.innerHTML*10) - d9.innerHTML)/10000;
+    d4.innerHTML = (number%1000000 - (d5.innerHTML*10000) - (d6.innerHTML*1000) - (d7.innerHTML*100) - (d8.innerHTML*10) - d9.innerHTML)/100000;
+    d3.innerHTML = (number%10000000 - (d4.innerHTML*100000) - (d5.innerHTML*10000) - (d6.innerHTML*1000) - (d7.innerHTML*100) - (d8.innerHTML*10) - d9.innerHTML)/1000000;
+    d2.innerHTML = (number%100000000 - (d3.innerHTML*1000000) - (d4.innerHTML*100000) - (d5.innerHTML*10000) - (d6.innerHTML*1000) - (d7.innerHTML*100) - (d8.innerHTML*10) - d9.innerHTML)/10000000;
+    d1.innerHTML = (number%1000000000 - (d2.innerHTML*10000000) - (d3.innerHTML*1000000) - (d4.innerHTML*100000) - (d5.innerHTML*10000) - (d6.innerHTML*1000) - (d7.innerHTML*100) - (d8.innerHTML*10) - d9.innerHTML)/100000000;
+    d0.innerHTML = (number%10000000000 - (d1.innerHTML*100000000) - (d2.innerHTML*10000000) - (d3.innerHTML*1000000) - (d4.innerHTML*100000) - (d5.innerHTML*10000) - (d6.innerHTML*1000) - (d7.innerHTML*100) - (d8.innerHTML*10) - d9.innerHTML)/1000000000;
+}

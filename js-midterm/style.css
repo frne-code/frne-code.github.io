@@ -1,0 +1,44 @@
+* {
+    font-family: monospace;
+}
+/*https://media.giphy.com/media/quEsMOrr3hmQ8/giphy.gif*/
+body {
+    background-image: url(../media/img/inclass/giphycode.gif);
+}
+
+h1, h2 {
+    background-color: white;
+    padding: 5px;
+    border: 5px dashed black;
+}
+
+table {
+    border: 2px solid black;
+    background-color:darkgreen;
+    font-size: 12em;
+}
+
+td {
+    background-color: chartreuse;
+    border: 2px solid black;
+    padding: 10px;
+    margin: 10px;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+}
+
+button {
+    background-color: white;
+    font-size: 40px;
+    border: 5px dashed black;
+    width: 200px;
+    height: 200px;
+}
+
+button:hover {
+    background-color: red;
+    color: white;
+}
