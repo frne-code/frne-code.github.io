@@ -11,6 +11,8 @@ let zoom = 0;
 let testZoom = 0;
 let timeRemaining = 60;
 let timerCount = 0;
+let finishClick = false;
+let digitsFound = true;
 
 let d0 = document.getElementById("d0"),
 d1 = document.getElementById("d1"),
@@ -55,7 +57,10 @@ function resetSpeed(){
    // console.log(zoom);
 }
 
+let newNumber = document.getElementById("boom");
+
 function explode(){
+    finishClick = true;
     let boomSound = document.getElementById("audiohNo");
     boomSound.pause();
     let boomSound2 = document.getElementById("audiohYeah");
@@ -64,13 +69,15 @@ function explode(){
     document.body.style.backgroundRepeat = "no-repeat";
     document.body.style.backgroundSize = "cover";
     console.log("Boom!");
-    let newNumber = document.getElementById("boom");
+    digitsFound = false;
     newNumber.innerHTML = "Get New Number";
     newNumber.addEventListener("click", newPhoneWhoDis);
 }
 
 function newPhoneWhoDis(){
-    window.location.href = "https://www.yellowpages.com/";
+    if(!digitsFound){
+        window.location.href = "https://www.yellowpages.com/";
+    }
 }
 
 function clearNumber(){
@@ -91,6 +98,10 @@ function clearNumber(){
     document.body.style.backgroundImage = "url(../media/img/inclass/giphycode.gif)";
     timeRemaining = 60;
     document.getElementById("timer").innerHTML = timeRemaining + " seconds remaining";
+    finishClick = false;
+    newNumber.innerHTML = "Phone Number Located";
+    digitsFound = true;
+    newNumber.removeEventListener("click", newPhoneWhoDis);
 }
 
 //setTimeout(explode,(timeRemaining*1000));
@@ -118,7 +129,12 @@ const timer = setInterval(function() {
   document.getElementById("timer").innerHTML = timeRemaining + " seconds remaining";
   timeRemaining--;
   //console.log(timeRemaining);
-  if (timeRemaining === 0) {
+  if(finishClick){
+    document.getElementById("timer").innerHTML = "0 seconds remaining";
+    timeRemaining = 0;
+    return;
+  }
+  else if (timeRemaining === 0) {
     clearInterval(timer);
     explode();
     document.getElementById("timer").innerHTML = "Times Up!";
