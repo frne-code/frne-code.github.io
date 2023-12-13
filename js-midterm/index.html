@@ -19,9 +19,17 @@
     </audio>
     <div id="everything">
     <h1>JS Project - Phone Number</h1>
-    <h2>Instructions: Use the "Down Arrow" key to decrement the counter. Once the desired phone number has been reached, click "Phone Number Located". Good luck.</h2>
+    <h2>Instructions: Use the "Down Arrow" key to decrement the counter.<br> Once the desired phone number has been reached, click "Phone Number Located".
+        <br>If you have gone past the desired phone number, you must hit the override button to reenter the number.<br>
+        Don't run out of time! Spam the "Space Bar" key to give yourself more time.<br>
+        You cannot decrement the phone number and increment the time simultaneously.<br> Good luck.</h2>
     <div>
+    <div id="tableID">
     <table id="phoneNumber">
+        <tr>
+            <th colspan="10">Number</th>
+            <th>Speed</th>
+        </tr>
         <tr id="digits">
             <td id="d0">9</td>
             <td id="d1">9</td>
@@ -33,11 +41,18 @@
             <td id="d7">9</td>
             <td id="d8">9</td>
             <td id="d9">9</td>
+            <td id="speedValue">0x</td>
         </tr>
     </table>
     </div>
+    <br><br>
+    </div>
+    <div id="timer">60 seconds remaining</div>
     <br>
-    <div id="buttons"><button id="boom">Phone Number Located</button><br><br><i>***sound warning***</i></div>
+    <div id="buttons">
+        <button id="boom">Phone Number Located<br>*sound warning*</button>
+        <button id="clear">Override (Reset)</button>
+    </div>
     </div>
 <script src="main.js"></script>
 </body>

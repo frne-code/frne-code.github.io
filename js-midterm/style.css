@@ -4,6 +4,7 @@
 /*https://media.giphy.com/media/quEsMOrr3hmQ8/giphy.gif*/
 body {
     background-image: url(../media/img/inclass/giphycode.gif);
+
 }
 
 h1, h2 {
@@ -45,4 +46,43 @@ button:hover {
 
 i {
     background-color: white;
+}
+
+#tableID {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+#boom {
+    width: 375px;
+    height: 200px;
+}
+
+#timer {
+    background-color: white;
+    border: 5px dashed black;
+    padding: 5px;
+    font-size: 30px;
+    font-weight: bolder;
+    text-align: center;
+}
+
+#speedValue {
+    background-color: rgba(255, 0, 0, 0);
+    animation: 2s infinite alternate pulse;
+}
+
+@keyframes pulse{
+    from{
+        background-color: red;
+    }
+    to{
+        background-color: rgba(255, 0, 0, 0);
+    }
 }

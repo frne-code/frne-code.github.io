@@ -1,7 +1,16 @@
 document.addEventListener("keydown", decreaseDigits);
+document.addEventListener("keyup",resetSpeed);
 document.getElementById("boom").addEventListener("click", explode);
+document.getElementById("clear").addEventListener("click",clearNumber);
+document.addEventListener("keydown",spaceDown);
+document.addEventListener("keyup",spaceUp);
+
 let number = 9999999999;
 let counter = 0;
+let zoom = 0;
+let testZoom = 0;
+let timeRemaining = 60;
+let timerCount = 0;
 
 let d0 = document.getElementById("d0"),
 d1 = document.getElementById("d1"),
@@ -14,11 +23,17 @@ d7 = document.getElementById("d7"),
 d8 = document.getElementById("d8"),
 d9 = document.getElementById("d9");
 
+
 function decreaseDigits(event){
     if(event.key=="ArrowDown"){
-        //console.log(counter + " and " + number);
+        zoom+=0.1;
+        testZoom = Math.round(zoom*10)/10;
+        console.log(testZoom);
+        number-=Math.round(1+zoom);
+      //  console.log(zoom + " and " + number);
         counter+=1;
         number-=1;
+        document.getElementById("speedValue").innerHTML = testZoom + "x";
         d9.innerHTML = number%10;
         d8.innerHTML = (number%100 - d9.innerHTML)/10;
         d7.innerHTML = (number%1000 - (d8.innerHTML*10) - d9.innerHTML)/100;
@@ -32,12 +47,22 @@ function decreaseDigits(event){
     }
 }
 
+function resetSpeed(){
+ //   console.log(zoom);
+    zoom = 0;
+    testZoom = 0;
+    document.getElementById("speedValue").innerHTML = testZoom + "x";
+   // console.log(zoom);
+}
+
 function explode(){
     let boomSound = document.getElementById("audiohNo");
     boomSound.pause();
     let boomSound2 = document.getElementById("audiohYeah");
     boomSound2.play();
     document.body.style.backgroundImage = "url(../media/img/inclass/boomGif.gif)";
+    document.body.style.backgroundRepeat = "no-repeat";
+    document.body.style.backgroundSize = "cover";
     console.log("Boom!");
     let newNumber = document.getElementById("boom");
     newNumber.innerHTML = "Get New Number";
@@ -47,3 +72,55 @@ function explode(){
 function newPhoneWhoDis(){
     window.location.href = "https://www.yellowpages.com/";
 }
+
+function clearNumber(){
+    number = 9999999999;
+    zoom = 0;
+    testZoom = 0;
+    document.getElementById("speedValue").innerHTML = testZoom + "x";
+    d9.innerHTML = 9;
+    d8.innerHTML = 9;
+    d7.innerHTML = 9;
+    d6.innerHTML = 9;
+    d5.innerHTML = 9;
+    d4.innerHTML = 9;
+    d3.innerHTML = 9;
+    d2.innerHTML = 9;
+    d1.innerHTML = 9;
+    d0.innerHTML = 9;
+    document.body.style.backgroundImage = "url(../media/img/inclass/giphycode.gif)";
+    timeRemaining = 60;
+    document.getElementById("timer").innerHTML = timeRemaining + " seconds remaining";
+}
+
+//setTimeout(explode,(timeRemaining*1000));
+
+//timeRemaining-=1;
+//document.getElementById("timer").innerHTML = timeRemaining + " seconds remaining";
+
+
+
+function spaceDown(event){
+    if(event.key == " " && timerCount==0){
+        timeRemaining+=1;
+        timerCount = 1;
+    }
+}
+
+function spaceUp(event){
+    if(event.key == " "){
+        timerCount = 0;
+    }
+}
+
+//Set Interval Function taken from SheCodes: https://www.shecodes.io/athena/52336-how-to-create-a-countdown-timer-in-javascript
+const timer = setInterval(function() {
+  document.getElementById("timer").innerHTML = timeRemaining + " seconds remaining";
+  timeRemaining--;
+  //console.log(timeRemaining);
+  if (timeRemaining === 0) {
+    clearInterval(timer);
+    explode();
+    document.getElementById("timer").innerHTML = "Times Up!";
+  }
+}, 1000);
